@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from main import songs_df
+#from main import songs_df
 
 
 st.set_page_config(page_title="Top 10 songs details", page_icon="📈")
