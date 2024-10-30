@@ -12,8 +12,8 @@ st.subheader("Bands stats")
 #artist_df = pd.read_csv('artist_details.csv')
 #artist_df = artist_df.drop(columns=['ID'])
 
-url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_genre.csv'
-artist_genre = pd.read_csv(url)
+url_genre = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_genre.csv'
+artist_genre = pd.read_csv(url_genre)
 
 # artist_df = artist_df.rename(columns={'name':'Band', 'genres':'Genres', 'popularity': 'Popularity', 'followers':'Followers'})
 # artist_df = artist_df[['Band', 'Genres', 'Popularity', 'Followers']]
@@ -47,8 +47,8 @@ st.divider()
 
 st.subheader("Bands popularity")
 
-url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv'
-artist_df = pd.read_csv(url)
+url_details = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv'
+artist_df = pd.read_csv(url_details)
 popularity_df = artist_df[['Band','Popularity']]
 min_pop = artist_df['Popularity'].min()
 max_pop = artist_df['Popularity'].max()
