@@ -12,6 +12,7 @@ st.title('Album details per band')
 
 #drop_down on Band
 bands = albums_df['artist_name'].drop_duplicates()
+bands = sorted(bands)
 band = st.selectbox('Select a band', bands, index= None)
 try:
     if len(band)>0:
