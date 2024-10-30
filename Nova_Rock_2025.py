@@ -12,7 +12,7 @@ st.subheader("Bands stats")
 #artist_df = pd.read_csv('artist_details.csv')
 #artist_df = artist_df.drop(columns=['ID'])
 
-url = 'https://github.com/sargones/spotify_streamlit_steps/blob/ae5cd433c96c0a183c8a8b12926b51026fdc829e/artist_details.csv'
+url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv?token=GHSAT0AAAAAACZRTOVPPCDV7NSNRMFYNFEKZZCSGTQ'
 
 
 artist_df = pd.read_csv(url)
