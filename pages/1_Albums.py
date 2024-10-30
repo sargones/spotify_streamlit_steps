@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from main import albums_df
+#from main import albums_df
 
 
 
