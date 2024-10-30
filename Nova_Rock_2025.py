@@ -47,7 +47,7 @@ st.divider()
 
 st.subheader("Bands popularity")
 
-url_details = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv'
+url_details = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artists.csv'
 artist_df = pd.read_csv(url_details)
 popularity_df = artist_df[['Band','Popularity']]
 min_pop = artist_df['Popularity'].min()
