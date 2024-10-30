@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from main import artist_df
+#from main import artist_df
 
 st.set_page_config(page_title="Nova Rock 2025", page_icon="👋")
 
