@@ -13,6 +13,7 @@ st.title('Top 10 songs details')
 st.subheader("Songs release date")
 #drop_down on Band
 bands = songs_year['artist'].drop_duplicates()
+bands = sorted(bands)
 band = st.selectbox('Select a band', bands, index= None)
 try:
   if len(band)>0:
