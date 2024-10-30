@@ -30,10 +30,12 @@ artist_genre = pd.read_csv(url)
 # artist_genre = artist_genre[artist_genre['Genre']!='']
 # print(artist_genre)
 
+#sorted list of genres
+genres_list = list(sorted(artist_genre['Genre'].unique()))
+
 options = st.multiselect(
     "Select your favorite genres",
-    list(artist_genre['Genre'].unique()),
-   # ['rock'],
+    genres_list, ['rock'],
 )
 
 st.dataframe(artist_genre[artist_genre['Genre'].isin(options)], hide_index=True, width = 400)
