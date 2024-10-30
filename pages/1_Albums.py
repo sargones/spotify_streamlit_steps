@@ -6,7 +6,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Albums details", page_icon="📈")
 
-albums_df = pd.read_csv('https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/pages/albums.csv?token=GHSAT0AAAAAACZRTOVOL4TOQSS2T6N3SKG6ZZCSHQA')
+albums_df = pd.read_csv('https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/albums.csv')
 albums_df = albums_df.drop(columns=['artist_id', 'album_type'])
 st.title('Album details per band')
 
