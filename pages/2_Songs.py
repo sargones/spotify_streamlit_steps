@@ -5,7 +5,7 @@ import pandas as pd
 
 st.set_page_config(page_title="Top 10 songs details", page_icon="📈")
 
-songs_df = pd.read_csv('https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/pages/songs.csv?token=GHSAT0AAAAAACZRTOVPTD3UIS3VC6CHWO36ZZCRSVQ')
+songs_df = pd.read_csv('https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/pages/songs.csv?token=GHSAT0AAAAAACZRTOVO7GIYHKKEFMM4HWZKZZCSINQ')
 songs_df = songs_df.drop(columns=['id'])
 songs_year = songs_df[['artist','song_name','song_album','song_release_year']]
 
