@@ -12,24 +12,23 @@ st.subheader("Bands stats")
 #artist_df = pd.read_csv('artist_details.csv')
 #artist_df = artist_df.drop(columns=['ID'])
 
-url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv'
+url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_genre.csv'
 
+# artist_df = pd.read_csv(url)
+# artist_df = artist_df.rename(columns={'name':'Band', 'genres':'Genres', 'popularity': 'Popularity', 'followers':'Followers'})
+# artist_df = artist_df[['Band', 'Genres', 'Popularity', 'Followers']]
+# artist_df['Genres'] = artist_df['Genres'].replace('"','')
 
-artist_df = pd.read_csv(url)
-artist_df = artist_df.rename(columns={'name':'Band', 'genres':'Genres', 'popularity': 'Popularity', 'followers':'Followers'})
-artist_df = artist_df[['Band', 'Genres', 'Popularity', 'Followers']]
-artist_df['Genres'] = artist_df['Genres'].replace('"','')
+# genres = artist_df['Genres'].apply(pd.Series)
+# genres.columns = [f'Genre_{i+1}' for i in genres.columns]
+# genres.stack().reset_index().rename(columns = {0: 'Genre'})#.drop(columns = 'level_1')
+# artist_df = pd.concat([artist_df,genres], axis = 1).drop(columns='Genres').fillna('')
 
-genres = artist_df['Genres'].apply(pd.Series)
-genres.columns = [f'Genre_{i+1}' for i in genres.columns]
-genres.stack().reset_index().rename(columns = {0: 'Genre'})#.drop(columns = 'level_1')
-artist_df = pd.concat([artist_df,genres], axis = 1).drop(columns='Genres').fillna('')
-
-artist_genre = artist_df.drop(columns=['Popularity', 'Followers'])
-artist_genre = artist_genre.set_index('Band').stack().reset_index()
-artist_genre = artist_genre.drop(columns = ['level_1']).rename(columns = {0: 'Genre'})
-artist_genre = artist_genre[artist_genre['Genre']!='']
-print(artist_genre)
+# artist_genre = artist_df.drop(columns=['Popularity', 'Followers'])
+# artist_genre = artist_genre.set_index('Band').stack().reset_index()
+# artist_genre = artist_genre.drop(columns = ['level_1']).rename(columns = {0: 'Genre'})
+# artist_genre = artist_genre[artist_genre['Genre']!='']
+# print(artist_genre)
 
 options = st.multiselect(
     "Select your favorite genres",
@@ -46,6 +45,8 @@ st.divider()
 
 st.subheader("Bands popularity")
 
+url = 'https://raw.githubusercontent.com/sargones/spotify_streamlit_steps/refs/heads/main/artist_details.csv'
+artist_df = pd.read_csv(url)
 popularity_df = artist_df[['Band','Popularity']]
 min_pop = artist_df['Popularity'].min()
 max_pop = artist_df['Popularity'].max()
