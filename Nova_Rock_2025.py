@@ -32,7 +32,7 @@ print(artist_genre)
 options = st.multiselect(
     "Select your favorite genres",
     list(artist_genre['Genre'].unique()),
-    ['rock'],
+   # ['rock'],
 )
 
 st.dataframe(artist_genre[artist_genre['Genre'].isin(options)], hide_index=True, width = 400)
